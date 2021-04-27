@@ -229,7 +229,7 @@ closefile:	define the closefile function
 closefile:	define the closefile label
 cmd:	define the cmd label
 cmd: db 'cat /etc/passwd'	declare cmd string and initialize it to 'cat /etc/passwd'
-cmd: db "cat /etc/passwd"	define cmd as the byte string "cat /etc/passwd"
+cmd: db 'cat /etc/passwd'	define cmd as the byte string 'cat /etc/passwd'
 cmp [ebp+arg_0], 1	compare the contents stored at ebp+arg_0 with 1
 cmp [ebp+var_a], 0	compare if the contents at memory location ebp+var_a is 0
 cmp [ebp+var_a], 0	compare the contents at memory location ebp+var_a with 0
