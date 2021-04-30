@@ -9,4 +9,5 @@ Our focus is on Linux, the most common OS for security-critical network services
 
 Each line of _Shellcode\_IA32_ dataset represents a snippet - intent pair. The _snippet_ is a line or a combination of multiple lines of assembly code, built by following the NASM syntax. The _intent_ is a comment in the English language.
 
+Further statistics on the dataset and a set of preliminary experiments performed with a neural machine translation (NMT) model are described in the following paper: [Shellcode_IA32: A Dataset for Automatic Shellcode Generation](https://arxiv.org/abs/2104.13100).
 
