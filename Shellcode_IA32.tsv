@@ -256,8 +256,8 @@ cmp al, 0xf2 \n je next_page	jump to the label next_page if the contents of the 
 cmp al, 0xf2 \n je next_page	if the contents of the al register is equal to the value 0xf2 then jump to the label next_page
 cmp al, 0xf2 \n jz _start	jump to the _start label if the contents of the al register is equal to the value 0xf2
 cmp al, 0xf2 \n jz _start	if the contents of the al register is equal to the value 0xf2 then jump to the _start label
-cmp al, 0xf2 \n jz incpage	jump to the incpage label if the contents of the al register in equal to the value 0xf2
-cmp al, 0xf2 \n jz incpage	if the contents of the al register in equal to the value 0xf2 then jump to the incpage label
+cmp al, 0xf2 \n jz incpage	jump to the incpage label if the contents of the al register is equal to the value 0xf2
+cmp al, 0xf2 \n jz incpage	if the contents of the al register is equal to the value 0xf2 then jump to the incpage label
 cmp al, 9 \n jg l1	jump to the label l1 if the contents of the al register is greater than the decimal value 9
 cmp al, 9 \n jg l1	if the contents of the al register is greater than the decimal value 9 then jump to the label l1
 cmp al, 9 \n jge l1	jump to the label l1 if the contents of the al register is greater than or equal to the decimal value 9
