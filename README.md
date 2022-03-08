@@ -9,6 +9,8 @@ Our focus is on Linux, the most common OS for security-critical network services
 
 Each line of _Shellcode\_IA32_ dataset represents a snippet - intent pair. The _snippet_ is a line or a combination of multiple lines of assembly code, built by following the NASM syntax. The _intent_ is a comment in the English language.
 
-Further statistics on the dataset and a set of preliminary experiments performed with a neural machine translation (NMT) model are described in the paper [Shellcode_IA32: A Dataset for Automatic Shellcode Generation](https://aclanthology.org/2021.nlp4prog-1.7), accepted to the 1st Workshop on Natural Language Processing for Programming (NLP4Prog 2021).
+Further statistics on the dataset and a set of preliminary experiments performed with a neural machine translation (NMT) model are described in the paper [Shellcode_IA32: A Dataset for Automatic Shellcode Generation](https://aclanthology.org/2021.nlp4prog-1.7), accepted to the 1st Workshop on Natural Language Processing for Programming (NLP4Prog 2021). 
+We conducted an extensive experimental evaluation using the _Shellcode\_IA32_ dataset in the journal paper [Can we generate shellcodes via natural language? An empirical study](https://doi.org/10.1007/s10515-022-00331-3), published in the Automated Software Engineering (AUSE) journal.
 
-Shellcode_IA32 dataset has been extended to build the ***Decoder Dataset*** (an assembly dataset used for decoding the encoded shellcodes) presented in the paper [EVIL: Exploiting Software via Natural Language](https://arxiv.org/abs/2109.00279). The extended dataset and the code to reproduce the experiments of the paper can be found on the [GitHub repository](https://github.com/dessertlab/EVIL). 
+Shellcode_IA32 dataset has been extended to build the ***Decoder Dataset*** (an assembly dataset used for decoding the encoded shellcodes) presented in the paper [EVIL: Exploiting Software via Natural Language](https://doi.org/10.1109/ISSRE52982.2021.00042). The extended dataset and the code to reproduce the experiments of the paper can be found on [this GitHub repository](https://github.com/dessertlab/EVIL). 
+
