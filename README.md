@@ -1,6 +1,6 @@
 # Shellcode_IA32
 
-___Shellcode_IA32___ is a dataset containing more than _20_ years of shellcodes from a variety of sources is the largest collection of shellcodes in assembly available to date. We are currently extending the dataset. Up to now, we released two version of the dataset.
+___Shellcode_IA32___ is a dataset containing more than _20_ years of shellcodes from a variety of sources and is the largest collection of shellcodes in assembly available to date. We are currently extending the dataset. Up to now, we released two versions of the dataset.
 
 ## Version 1
 
@@ -16,7 +16,7 @@ We conducted an extensive experimental evaluation using the _Shellcode\_IA32_ da
 
 ## Version 2
 
-Shellcode_IA32 dataset has been extended to build the ***Decoder Dataset*** (an assembly dataset used for decoding the encoded shellcodes) presented in the paper [EVIL: Exploiting Software via Natural Language](https://doi.org/10.1109/ISSRE52982.2021.00042). The extended dataset and the code to reproduce the experiments of the paper can be found on [this GitHub repository](https://github.com/dessertlab/EVIL). This second version of the dataset includes 3,715 assembly code snippets with their description in English language.
+Shellcode_IA32 dataset has been extended to build the ***Decoder Dataset*** (an assembly dataset used for decoding the encoded shellcodes) presented in the paper [EVIL: Exploiting Software via Natural Language](https://doi.org/10.1109/ISSRE52982.2021.00042). The extended dataset and the code to reproduce the experiments of the paper can be found on [this GitHub repository](https://github.com/dessertlab/EVIL). This second version of the dataset includes 3,715 assembly code snippets with their description in the English language.
 
 
 ## Version 3
